@@ -8,11 +8,11 @@ project( coredump-generator )
 find_package(FLTK REQUIRED)
 
 #   Add executable file
-add_executable( main main.c++ )
+add_executable( coredump_generator main.c++ )
 
-target_link_libraries( main ${FLTK_LIBRARIES} )
+target_link_libraries( coredump_generator ${FLTK_LIBRARIES} )
 
-install(TARGETS main
+install(TARGETS coredump_generator
         DESTINATION "/usr/bin/"
 )
 
