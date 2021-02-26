@@ -8,11 +8,20 @@ project( coredump-generator )
 find_package(FLTK REQUIRED)
 
 #   Add executable file
-add_executable( coredump_generator main.c++ )
+add_executable( coredump_generator_ui coredump_generator_ui.c++ )
+add_executable( coredump_generator coredump_generator.c++ )
 
-target_link_libraries( coredump_generator ${FLTK_LIBRARIES} )
+target_link_libraries( coredump_generator_ui ${FLTK_LIBRARIES} )
 
-install(TARGETS coredump_generator
+#
+#       Debian
+#
+
+set(FILE_LISTS 
+        "coredump_generator_ui" 
+        "coredump_generator")
+
+install(TARGETS ${FILE_LISTS}
         DESTINATION "/usr/bin/"
 )
 
@@ -22,7 +31,7 @@ install(TARGETS coredump_generator
 
 SET(MAJOR_VERSION "1")
 SET(MINOR_VERSION "0")
-SET(PATCH_VERSION "1")
+SET(PATCH_VERSION "2")
 
 
 SET(CPACK_GENERATOR "DEB")
