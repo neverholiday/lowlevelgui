@@ -1,5 +1,5 @@
 #   Required minimum version
-cmake_minimum_required(VERSION 3.17.0)
+cmake_minimum_required(VERSION 3.16.0)
 
 #   Project
 project( coredump-generator )
