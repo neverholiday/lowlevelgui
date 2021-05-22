@@ -1,21 +1,3 @@
-pipeline {
-	agent any
+@Library('pipeline_library_local') _
 
-	stages {
-		stage('Build') {
-			steps {
-				echo 'Build ...'
-			}
-		}
-		stage('Test') {
-			steps {
-				echo 'Test ...'
-			}
-		}
-		stage('Deploy') {
-			steps {
-				echo 'Deploy ...'
-			}
-		}
-	}
-}
+mainpipeline 'lowlevelgui'
